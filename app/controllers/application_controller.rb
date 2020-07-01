@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    # ログイン認証されてないユーザはログイン画面に強制的に戻される！
+    before_action :authenticate_user!
     # 登録・ログイン認証をする前（before_actionで）に、「configure_permitted_parameters」が実行される。
     before_action :configure_permitted_parameters, if: :devise_controller?
 
