@@ -6,4 +6,5 @@ class User < ApplicationRecord
   # 「has_many」は1対Nの関係の「1」に相当する
   has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
 end
